@@ -1,4 +1,4 @@
-baseURL = "http://alvarolop.github.io/"
+baseURL = "https://alvarolop.github.io/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "loveit"
