@@ -83,7 +83,7 @@ languageName = "English"
       # URL of the LOGO
       logo = ""
       # title name
-      name = "THE TECH BLOG"
+      name = "MY TECH BLOG"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = "<img width='20px' height='20px' src='/smile.png'>"
       # you can add extra information after the name (HTML format is supported), such as icons
