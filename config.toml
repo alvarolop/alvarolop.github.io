@@ -4,7 +4,7 @@ baseURL = "https://alvarolop.github.io/"
 theme = "loveit"
 
 # website title
-title = "The Tech Blog"
+title = "🎩 Álvaro López"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -51,7 +51,7 @@ languageName = "English"
     identifier = "aboutme"
     pre = ""
     post = ""
-    name = "About Me"
+    name = "About"
     url = "/about"
     title = ""
 
@@ -83,7 +83,7 @@ languageName = "English"
       # URL of the LOGO
       logo = ""
       # title name
-      name = "MY TECH BLOG"
+      name = "ÁLVARO LÓPEZ"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = "<img width='20px' height='20px' src='/smile.png'>"
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -178,7 +178,8 @@ languageName = "English"
       #  title shown in home page (HTML format is supported)
       title = "ÁLVARO LÓPEZ"
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "In this blog, I will talk about some tech topics in a simple manner."
+      subtitle = "In this blog, I will talk about some tech topics in a simple manner. I’m currently working with several Red Hat products and other open source projects to foster the adoption of cloud-native solutions in legacy ecosystems."
+  # website images for Open Graph and Twitter Cards"
       # whether to use typeit animation for subtitle
       typeit = false
       # whether to show social links
@@ -574,8 +575,8 @@ languageName = "English"
 
 # Permalinks config
 [Permalinks]
-  # posts = ":year/:month/:filename"
-  posts = ":filename"
+  posts = ":year/:month/:filename"
+  # posts = ":filename"
 
 # Privacy config
 [privacy]
