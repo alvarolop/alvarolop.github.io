@@ -575,8 +575,8 @@ languageName = "English"
 
 # Permalinks config
 [Permalinks]
-  posts = ":year/:month/:filename"
-  # posts = ":filename"
+  # posts = ":year/:month/:filename"
+  posts = ":filename"
 
 # Privacy config
 [privacy]
