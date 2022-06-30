@@ -10,6 +10,7 @@ categories: ["documentation"]
 
 # https://github.com/wowchemy/wowchemy-hugo-themes/issues/978
 
+# Image URL: https://www.pexels.com/photo/greyscale-photography-of-car-engine-190574/
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"

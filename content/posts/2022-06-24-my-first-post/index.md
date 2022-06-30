@@ -10,9 +10,11 @@ categories: ["documentation"]
 
 # https://github.com/wowchemy/wowchemy-hugo-themes/issues/978
 
+# Image URL: https://www.pexels.com/photo/woman-writing-on-a-notebook-beside-teacup-and-tablet-computer-733856/
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"
 ---
+
 
 Hola!
