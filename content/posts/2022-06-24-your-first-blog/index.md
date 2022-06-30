@@ -10,7 +10,6 @@ categories: ["documentation"]
 
 # https://github.com/wowchemy/wowchemy-hugo-themes/issues/978
 
-# Image URL: https://www.pexels.com/photo/photo-of-orange-yellow-and-red-hello-molding-clay-954599/
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"

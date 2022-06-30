@@ -1,5 +1,5 @@
 ---
-title: "2022 06 25 Test Ci Cd"
+title: "Test Ci Cd"
 date: 2022-06-25T00:32:07+02:00
 draft: false
 
