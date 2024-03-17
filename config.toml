@@ -336,7 +336,7 @@ languageName = "English"
       fullscreen = true
     #  social share links in post page
     [params.page.share]
-      enable = true
+      enable = false
       Twitter = true
       Facebook = true
       Linkedin = false

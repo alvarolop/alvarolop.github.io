@@ -88,7 +88,7 @@ hugo new posts/my-first-post.md
 ### Step 5: Start the Hugo server locally
 
 ```bash
-hugo server -D  --disableFastRender
+hugo server -D --buildFuture --disableFastRender
 ```
 
 As shown in the logs, you can check your site at <http://localhost:1313>.
