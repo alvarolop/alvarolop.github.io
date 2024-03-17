@@ -1,5 +1,5 @@
 ---
-title: "Readme.txt"
+title: "README.adoc"
 draft: false
 
 description: "About me"
@@ -13,7 +13,7 @@ lightgallery: true
 #   enable: true
 ---
 
-![About me](featured-image.jpg "About me")
+![About me](./featured-image.jpg "About me")
 
 
 Hi there!!
