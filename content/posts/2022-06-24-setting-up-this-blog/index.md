@@ -1,12 +1,12 @@
 ---
-title: "Setting up your first blog"
-date: 2022-06-24T23:28:25+02:00
+title: "Setting up this blog"
+date: 2022-06-24
 draft: false
 
 description: ""
 
 tags: ["content", "Markdown", "blog"]
-categories: ["documentation"]
+categories: ["Blogs"]
 
 # https://github.com/wowchemy/wowchemy-hugo-themes/issues/978
 
@@ -88,7 +88,7 @@ hugo new posts/my-first-post.md
 ### Step 5: Start the Hugo server locally
 
 ```bash
-hugo server -D
+hugo server -D  --disableFastRender
 ```
 
 As shown in the logs, you can check your site at <http://localhost:1313>.
@@ -96,8 +96,7 @@ As shown in the logs, you can check your site at <http://localhost:1313>.
 
 ## Setting up GitHub Pages
 
-> In order to deploy this site on GH Pages, I recommend you to follow the [official documentation](https://gohugo.io/hosting-and-deployment/hosting-on-github/#build-hugo-with-github-action
-).
+> In order to deploy this site on GH Pages, I recommend you to follow the [official documentation](https://gohugo.io/hosting-and-deployment/hosting-on-github/#build-hugo-with-github-action).
 
 GitHub executes your software development workflows. Every time you push your code on the Github repository, Github Actions will build the site automatically.
 
