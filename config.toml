@@ -174,7 +174,7 @@ languageName = "English"
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "/images/alvaro.png"
+      avatarURL = "/images/alvaro.jpeg"
       #  title shown in home page (HTML format is supported)
       title = "ÁLVARO LÓPEZ"
       # subtitle shown in home page (HTML format is supported)
