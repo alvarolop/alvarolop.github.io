@@ -1,0 +1,143 @@
+---
+title: "Using SOS collect to retrieve sos reports from OCP cluster"
+date: 2024-03-25
+draft: false
+
+description: ""
+
+tags: ["openshift", "troubleshooting", "sos-report"]
+categories: ["OpenShift Basics"]
+
+# https://github.com/wowchemy/wowchemy-hugo-themes/issues/978
+
+resources:
+- name: "featured-image"
+  src: "featured-image.jpg"
+---
+
+
+== What is SOS collect?
+
+If you have worked with Red Hat products for a while, you should know about the `sos` tool. `sos` is a diagnostic data collection utility, used by system administrators, support representatives, and the like to assist in *troubleshooting* issues with a system or group of systems. The most well known function is `sos report`. It generates an archive of system information including configuration files and command output.
+
+What is less commonly known is the subcommand `sos collect`, which collects `sosreports` from *multiple nodes* and packages them in a *single useful tar archive*. Using this tool, you don't need to follow the cumbersome process defined in this https://access.redhat.com/solutions/5065411[KCS: How to provide an sosreport from a RHEL CoreOS OpenShift 4 node].
+
+
+== What I need to know?
+
+In my personal experience, `sos collect` as part of the `sos` command is a pretty new feature that is subject to constant updates and improvements. Therefore, I strongly recommend to *update to the latest version of the plugin*, which is v4.6.1 at the time of writing this blog. 
+
+
+.**Checking the sos collect version**
+[source, bash]
+----
+sos collect --verbose
+----
+
+
+== Authenticating against the cluster
+
+This tool uses `kubeconfig` as the preferred authentication method. In case you are more focused on the development side of OpenShift and not that aware of how it works, let's summarize how it works and a couple ways of retrieving it.
+
+WARNING: `sos collect` requires a kubeconfig with *cluster-admin* role binding to work.
+
+The two easier ways of retrieving a kubeconfig are:
+
+* Use the `kubeconfig` provided during installation. This will work if you didn't change the certificates of the API after installation.`sos collect` will not use the `--insecure-skip-tls-verify` flag and the command will not work properly.
+
+* Generate a `kubeconfig` on demand using a cluster-admin user account. It is as simple as executing the following command:
+
+.*Generate a temporal kubeconfig*
+[source, bash]
+----
+oc login --token=$USER_TOKEN --server=$OCP_API_URL:6443 --kubeconfig=/tmp/kubeconfig
+----
+
+.*Rescuing kubeconfig*
+[TIP]
+====
+Oh! Your openshift-authentication pods are gone and you cannot authenticate with a token? And your installer kubeconfig is missing, too? No worries, these KCSs will help you:
+
+* https://access.redhat.com/solutions/7010382[How to modify kubeconfig for system:admin user after adding API certificate in OpenShift 4?]. 
+* https://access.redhat.com/solutions/5286371[How to re-create kubeconfig for system:admin user in OpenShift 4].
+* https://access.redhat.com/solutions/6054981[How to replace the certificate authority for the installer system:admin kubeconfig].
+====
+
+
+== Generating the sos report
+
+Okay, there we go! It is time to retrieve the sos reports. The only thing that you need to do is to export the current KUBECONFIG. Then execute the following command:
+
+.*Retrieve the sos reports using sos collect*
+[source, bash]
+----
+export KUBECONFIG=/tmp/kubeconfig
+
+sos collect --no-local --nopasswd-sudo --batch --clean \
+  --cluster-type=ocp -c ocp.role=master:worker
+----
+
+As you can see, this command has a bit amount of parameters, let's discuss them one by one:
+
+* `--no-local`: To avoid collecting also the sos report of your local machine. 
+* `--nopasswd-sudo`: As the `core` user in the OCP nodes is passwordless sudoer.
+* `--batch`: Run in non-interactive mode, skipping all the prompts for user input.
+* `--clean`: To obfuscate any confidential variables such as IPs, certificates, etc.
+* `--cluster-type=ocp`: To make sure that it uses the ocp profile as well as use the KUBECONFIG to authenticate.
+* `-c ocp.role=master:worker`: By default, it only collects reports from the worker nodes. This flag is an array of nodes labels to analyze. 
+
+If you want to customize this command in other ways, you can check all the configuration options under the `-c` flag running the following command:
+
+.*Retrieve all the cluster configuration options*
+[source, bash]
+----
+sos collect -l
+----
+
+
+== Additional resources
+
+Ok, this post was great, but I need more information about `sos report` and `sos collect`. Then, this is your section!! Please, check the following Red Hat KCSs:
+
+* https://access.redhat.com/solutions/3530881[How do I collect an sos report from multiple nodes at the same time?].
+* https://access.redhat.com/solutions/5065411[How to provide an sosreport from a RHEL CoreOS OpenShift 4 node].
+* https://access.redhat.com/solutions/4387261[How to generate a sosreport within nodes without SSH in OCP 4].
+* https://access.redhat.com/articles/6256901[Using sos-collector to collect sosreports from multiple OpenStack nodes].
+
+
+Still, this is not enough, I'm missing something and this is not working for me! Then, it is time. You cannot wait more. Click https://github.com/sosreport/sos/blob/main/bin/sos-collector[here] to see the source code and understand how this amazing tool works!!
+
+
+
+
+
+== Annex: Structure of the kubeconfig
+
+The *kubeconfig*, by default located under `~/.kube/config` is the file that `oc` and `kubectl` use to authenticate against the cluster. It basically contains three sections:
+
+* *clusters*: A list of all the clusters that it has connected to before.
+* *users*: For each user, the latest credentials that it has used before.
+* *context*: A relationship between a cluster and its user.
+
+It also contains the key `current-context` that stores the context you are currently logged in at.
+
+.*Structure of a kubeconfig file*
+[source, yaml]
+----
+apiVersion: v1
+kind: Config
+current-context: <namespace>/<ref-cluster>/<ref-user>
+clusters:
+  - cluster:
+      server: ""
+    name: ""
+users:
+  - name: ""
+    user: 
+      token: "" 
+contexts: 
+  - context:
+      cluster: ""
+      user: ""
+    name: ""
+----
