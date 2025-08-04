@@ -11,6 +11,12 @@ languageCode = "en"
 # language name ["English", "简体中文", "Français", "Polski", ...]
 languageName = "English"
 
+# defaultContentLanguage = "en"
+# # Enable features
+# enableRobotsTXT = true
+# enableGitInfo = true
+# enableEmoji = true
+
 # Author config
 [author]
   name = "Álvaro López Medina"
@@ -542,13 +548,48 @@ languageName = "English"
 [markup]
   # Syntax Highlighting
   [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNos = true
-    lineNumbersInTable = true
-    # false is a necessary configuration
-    # (https://github.com/dillonzq/LoveIt/issues/158)
+    # Choose your desired style.
+    # A list of available styles can be found at:
+    # https://gohugo.io/content-management/syntax-highlighting/#generate-syntax-highlighter-css
+    # Some popular options include: "monokai", "github", "dracula", "nord", "solarized-light", "solarized-dark"
+    style = "github" # Example: using the GitHub style
+
+    # Whether to use CSS classes instead of inline styles.
+    # Set to true if you want to generate a separate CSS file for highlighting
+    # (recommended for better control and performance).
     noClasses = false
+
+    # Whether to highlight fenced code blocks in Markdown.
+    codeFences = true
+
+    # Whether to guess the language if not specified.
+    guessSyntax = false
+
+    # Control line number display:
+    # - false (default): no line numbers
+    # - true: enable line numbers (controlled by lineNumbersInTable)
+    # - "inline": enable inline line numbers (lineNumbersInTable = false)
+    # - "table": enable table-based line numbers (lineNumbersInTable = true)
+    lineNos = true # Example: enable line numbers
+
+    # Whether to render line numbers in an HTML table (allows copying code without numbers).
+    # Irrelevant if lineNos is false.
+    lineNumbersInTable = true # Example: use table for line numbers
+
+    # The starting number for line numbers.
+    lineNoStart = 1
+
+    # A space-delimited list of lines to emphasize (e.g., "2-4 7").
+    hl_Lines = ""
+
+    # Whether to render the highlighted code without a wrapping container.
+    hl_inline = false
+
+    # Number of spaces to substitute for each tab character.
+    tabWidth = 2
+    
+    # The class or classes to use for the outermost element of the highlighted code.
+    # wrapperClass = "highlight" # Default is "highlight"
   # Goldmark is from Hugo 0.60 the default library used for Markdown
   [markup.goldmark]
     [markup.goldmark.extensions]
@@ -565,7 +606,7 @@ languageName = "English"
   # Table Of Contents settings
   [markup.tableOfContents]
     startLevel = 2
-    endLevel = 6
+    endLevel = 4
 
 # Sitemap config
 [sitemap]
@@ -605,8 +646,13 @@ languageName = "English"
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
+  taxonomy = ["HTML", "RSS"]  # Changed from taxonomyterm
+  term = ["HTML", "RSS"]
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+    author = "authors"  # Added author taxonomy
 
 # https://www.sivalabs.in/creating-blog-using-hugo-asciidoc-netlify/
 [security.exec]
