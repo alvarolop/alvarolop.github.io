@@ -2,11 +2,13 @@
 title: "Setting up this blog"
 date: 2022-06-24
 draft: false
-
-description: ""
-
+params:
+  author: Álvaro López
 tags: ["content", "Markdown", "blog"]
 categories: ["Blogs"]
+
+description: "A guide to setting up a personal blog using Hugo and GitHub Pages"
+summary: "A guide to setting up a personal blog using Hugo and GitHub Pages"
 
 # https://github.com/wowchemy/wowchemy-hugo-themes/issues/978
 

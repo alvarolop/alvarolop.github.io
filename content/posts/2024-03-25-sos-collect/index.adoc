@@ -2,17 +2,19 @@
 title: "Using SOS collect to retrieve sos reports from OCP cluster"
 date: 2024-03-25
 draft: false
-
-description: ""
-
+params:
+  author: Álvaro López
 tags: ["openshift", "troubleshooting", "sos-report"]
 categories: ["OpenShift Basics"]
+
+description: "Learn how to use sos collect to gather sos reports from multiple OpenShift nodes in a single archive, simplifying troubleshooting and support processes."
+summary: "Learn how to use sos collect to gather sos reports from multiple OpenShift nodes in a single archive, simplifying troubleshooting and support processes."
 
 # https://github.com/wowchemy/wowchemy-hugo-themes/issues/978
 
 resources:
 - name: "featured-image"
-  src: "featured-image.jpg"
+  src: "featured-image.png"
 ---
 
 
