@@ -657,3 +657,6 @@ languageName = "English"
 # https://www.sivalabs.in/creating-blog-using-hugo-asciidoc-netlify/
 [security.exec]
     allow = ['^asciidoctor$']
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
