@@ -1,7 +1,7 @@
 baseURL = "https://alvarolop.github.io/"
 
 # Change the default theme to be use when building the site with Hugo
-theme = "loveit"
+theme = "LoveIt"
 
 # website title
 title = "OpenShift with Álvaro"
@@ -624,7 +624,7 @@ languageName = "English"
   #  privacy of the Google Analytics (replaced by params.analytics.google)
   [privacy.googleAnalytics]
     # ...
-  [privacy.twitter]
+  [privacy.x]
     enableDNT = true
   [privacy.youtube]
     privacyEnhanced = true
