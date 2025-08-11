@@ -47,14 +47,17 @@ jobs:
       #     tar -xf ${{ runner.temp }}/dart-sass.tar.gz --directory ${{ runner.temp }}
       #     mv ${{ runner.temp }}/dart-sass/ /usr/local/bin
       #     echo "/usr/local/bin/dart-sass" >> $GITHUB_PATH
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
-          fetch-depth: 0
+          fetch-depth: 1
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
 
@@ -75,18 +78,19 @@ jobs:
             --gc \
             --minify
 
-      - name: Cache Save
-        id: cache-save
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+      # - name: Cache Save
+      #   id: cache-save
+      #   uses: actions/cache/save@v4
+      #   with:
+      #     path: |
+      #       ${{ runner.temp }}/hugo_cache
+      #     key: ${{ steps.cache-restore.outputs.cache-primary-key }}
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+
       - name: Check Versions
         run: |
           echo "Hugo version:"
