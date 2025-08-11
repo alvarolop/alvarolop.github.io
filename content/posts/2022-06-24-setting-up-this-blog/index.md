@@ -47,7 +47,14 @@ If you are lazy and want to copy-paste some commands to install Hugo on Fedora, 
 ### Step 1: Install Hugo
 
 ```bash
-sudo dnf install hugo
+# Set the desired Hugo version
+HUGO_VERSION="0.145.0"
+
+# Download and extract the binary directly into the target directory
+curl -sL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz | tar -xz -C ~/bin/ hugo
+
+# Verify the installation
+hugo version
 ```
 
 If you have a different distro, check the [official documentation](https://gohugo.io/getting-started/installing/#fedora-red-hat-and-centos).
