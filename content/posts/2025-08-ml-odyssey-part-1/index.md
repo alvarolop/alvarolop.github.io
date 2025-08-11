@@ -462,6 +462,9 @@ We will use Python's built-in `venv` to create isolated spaces for your project 
    
    # Development and experimentation tools
    pip install jupyterlab kagglehub scipy
+
+   # Spatial analysis library
+   pip install libpysal esda
    ```
 
 5. **Start JupyterLab**. With everything set up, launch your ML workspace:
