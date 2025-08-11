@@ -192,7 +192,7 @@ PyTorch's approach to machine learning feels natural to Python developers, makin
 
 Here's how PyTorch has been gaining momentum against TensorFlow over recent years:
 
-{{< echarts >}}
+{{< echarts width="90%" height="400px" >}}
 {
   "title": {
       "text": "PyTorch vs. TensorFlow Popularity Over Time",
@@ -242,6 +242,79 @@ Here's how PyTorch has been gaining momentum against TensorFlow over recent year
         "name": "TensorFlow",
         "type": "line",
         "data": [0,0,0,0,0,0,0,0,0,1,16,6,6,7,8,9,14,15,14,14,17,20,25,26,30,44,50,51,52,55,52,50,53,61,62,61,58,56,68,69,68,65,63,64,60,63,66,55,57,57,65,65,58,58,63,56,56,59,55,50,53,55,52,53,52,55,55,49,49,38,39,38,36,32,37,36,36,36,35,32,32,35,37,34,43,50,64,62,60,55,50,46,48,49,49,48,46,53,54,49,49,46,43,40,41,42,45,37,40,43,50,46,45,38,36,33,33,33,36,32,32,32,30,26,25,27,25]
+    }
+  ]
+}
+{{< /echarts >}}
+
+The rendered output looks like this:
+
+{{< echarts >}}
+{
+  "title": {
+    "text": "Summary Line Chart",
+    "top": "2%",
+    "left": "center"
+  },
+  "tooltip": {
+    "trigger": "axis"
+  },
+  "legend": {
+    "data": ["Email Marketing", "Affiliate Advertising", "Video Advertising", "Direct View", "Search Engine"],
+    "top": "10%"
+  },
+  "grid": {
+    "left": "5%",
+    "right": "5%",
+    "bottom": "5%",
+    "top": "20%",
+    "containLabel": true
+  },
+  "toolbox": {
+    "feature": {
+      "saveAsImage": {
+        "title": "Save as Image"
+      }
+    }
+  },
+  "xAxis": {
+    "type": "category",
+    "boundaryGap": false,
+    "data": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "name": "Email Marketing",
+      "type": "line",
+      "stack": "Total",
+      "data": [120, 132, 101, 134, 90, 230, 210]
+    },
+    {
+      "name": "Affiliate Advertising",
+      "type": "line",
+      "stack": "Total",
+      "data": [220, 182, 191, 234, 290, 330, 310]
+    },
+    {
+      "name": "Video Advertising",
+      "type": "line",
+      "stack": "Total",
+      "data": [150, 232, 201, 154, 190, 330, 410]
+    },
+    {
+      "name": "Direct View",
+      "type": "line",
+      "stack": "Total",
+      "data": [320, 332, 301, 334, 390, 330, 320]
+    },
+    {
+      "name": "Search Engine",
+      "type": "line",
+      "stack": "Total",
+      "data": [820, 932, 901, 934, 1290, 1330, 1320]
     }
   ]
 }
