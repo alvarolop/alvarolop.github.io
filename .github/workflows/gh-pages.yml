@@ -96,6 +96,15 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      - name: Check Versions
+        run: |
+          echo "Hugo version:"
+          hugo version
+          echo "Node version:"
+          node -v
+          echo "npm version:"
+          npm -v
+
 
   # Deployment job
   deploy:
