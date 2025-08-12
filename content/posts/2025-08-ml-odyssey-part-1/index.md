@@ -192,7 +192,15 @@ PyTorch's approach to machine learning feels natural to Python developers, makin
 
 Here's how PyTorch has been gaining momentum against TensorFlow over recent years:
 
-{{< echarts width="90%" height="400px" >}}
+<figure>
+<img src="python-vs-tensorflow.svg" alt="PyTorch vs TensorFlow Popularity" style="display: block; margin: 2em auto; max-width: 90%;" />
+    <figcaption>
+        <h4>Source: <a href="https://trends.google.es/trends/explore?date=2015-01-01%202025-07-21&q=%2Fg%2F11gd3905v1,%2Fg%2F11bwp1s2k3&hl=en" target="_blank" rel="noopener">Google Trends</a></h4>
+    </figcaption>
+</figure>
+
+
+<!-- {{< echarts width="90%" height="400px" >}}
 {
   "title": {
       "text": "PyTorch vs. TensorFlow Popularity Over Time",
@@ -245,82 +253,7 @@ Here's how PyTorch has been gaining momentum against TensorFlow over recent year
     }
   ]
 }
-{{< /echarts >}}
-
-The rendered output looks like this:
-
-{{< echarts >}}
-{
-  "title": {
-    "text": "Summary Line Chart",
-    "top": "2%",
-    "left": "center"
-  },
-  "tooltip": {
-    "trigger": "axis"
-  },
-  "legend": {
-    "data": ["Email Marketing", "Affiliate Advertising", "Video Advertising", "Direct View", "Search Engine"],
-    "top": "10%"
-  },
-  "grid": {
-    "left": "5%",
-    "right": "5%",
-    "bottom": "5%",
-    "top": "20%",
-    "containLabel": true
-  },
-  "toolbox": {
-    "feature": {
-      "saveAsImage": {
-        "title": "Save as Image"
-      }
-    }
-  },
-  "xAxis": {
-    "type": "category",
-    "boundaryGap": false,
-    "data": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "name": "Email Marketing",
-      "type": "line",
-      "stack": "Total",
-      "data": [120, 132, 101, 134, 90, 230, 210]
-    },
-    {
-      "name": "Affiliate Advertising",
-      "type": "line",
-      "stack": "Total",
-      "data": [220, 182, 191, 234, 290, 330, 310]
-    },
-    {
-      "name": "Video Advertising",
-      "type": "line",
-      "stack": "Total",
-      "data": [150, 232, 201, 154, 190, 330, 410]
-    },
-    {
-      "name": "Direct View",
-      "type": "line",
-      "stack": "Total",
-      "data": [320, 332, 301, 334, 390, 330, 320]
-    },
-    {
-      "name": "Search Engine",
-      "type": "line",
-      "stack": "Total",
-      "data": [820, 932, 901, 934, 1290, 1330, 1320]
-    }
-  ]
-}
-{{< /echarts >}}
-
-Source: [Google Trends](https://trends.google.es/trends/explore?date=2015-01-01%202025-07-21&q=%2Fg%2F11gd3905v1,%2Fg%2F11bwp1s2k3&hl=en)
+{{< /echarts >}} -->
 
 ## When to Use Traditional ML vs Deep Learning
 
