@@ -151,6 +151,7 @@ Understanding your data through visualization is crucial before building any ML 
     </div>
 </div>
 
+
 <div style="background-color: #f6f8fa; border-left: 4px solid #6f42c1; padding: 1em; margin-bottom: 1em;">
 
 📊 **Visualization Strategy**: Matplotlib provides the canvas and fine control, while Seaborn adds statistical insight and modern aesthetics. This combination lets you create both quick exploratory plots and publication-ready figures.
@@ -159,16 +160,26 @@ Understanding your data through visualization is crucial before building any ML 
 
 ## 3. Traditional Machine Learning: Scikit-learn
 
-Before diving into neural networks, it's essential to master traditional ML algorithms. Scikit-learn is your perfect starting point:
+Before diving into neural networks, it's essential to master traditional ML algorithms. Scikit-learn is your perfect starting point. Perfect for when you don't need the complexity of deep learning:
 
-**Scikit-learn: Where ML Fundamentals Shine**
+<div style="display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; margin-bottom: 30px;">
+    <a href="https://scikit-learn.org/" target="_blank" rel="noopener">
+        <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Scikit-learn Logo" style="width: 150px;">
+    </a>
+    <div>
+        <strong>Scikit-learn: Machine Learning Made Simple</strong>
+        <small style="display: block; margin-bottom: 8px;">
+            <a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">📚 Documentation</a>
+        </small>
+        <ul style="margin: 0;">
+            <li>📈 <b>Traditional Algorithms</b>: Comprehensive collection of regression, classification, and clustering algorithms</li>
+            <li>🛠️ <b>Data Processing</b>: Robust preprocessing, feature selection, and model evaluation tools</li>
+            <li>🧪 <b>Easy Integration</b>: Seamless workflow with NumPy and pandas</li>
+            <li>🖥️ <b>Learning-Focused</b>: Excellent for understanding ML fundamentals and baselines</li>
+        </ul>
+    </div>
+</div>
 
-Perfect for when you don't need the complexity of deep learning:
-
-* 📈 **Traditional Algorithms**: Comprehensive collection of regression, classification, and clustering algorithms
-* 🛠️ **Data Processing**: Robust preprocessing, feature selection, and model evaluation tools  
-* 🧪 **Easy Integration**: Seamless workflow with NumPy and pandas
-* 🖥️ **Learning-Focused**: Excellent for understanding ML fundamentals and baselines
 
 Many real-world problems are solved more effectively with traditional ML than deep learning!
 
@@ -176,15 +187,24 @@ Many real-world problems are solved more effectively with traditional ML than de
 
 Once you've mastered traditional ML, PyTorch opens the door to neural networks and deep learning:
 
-**PyTorch: The Modern ML Framework**
-
-PyTorch has emerged as the leading choice for deep learning practitioners:
-
-* 🐍 **Intuitive and Pythonic**: Natural coding style that follows Python's philosophy
-* 🧩 **Dynamic and Flexible**: Real-time model modifications and easier debugging
-* 🚀 **Research to Production**: Seamless transition from experimentation to deployment
-* 🛠️ **Rich Ecosystem**: Extensive libraries for vision, NLP, and audio processing
-* 👥 **Growing Community**: Strong adoption in research and industry
+<div style="display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; margin-bottom: 30px;">
+    <a href="https://pytorch.org/" target="_blank" rel="noopener">
+        <img src="https://pytorch.org/assets/images/pytorch-logo.png" alt="PyTorch Logo" style="width: 150px;">
+    </a>
+    <div>
+        <strong>PyTorch: The Modern Deep Learning Framework</strong>
+        <small style="display: block; margin-bottom: 8px;">
+            <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener">📚 Documentation</a>
+        </small>
+        <ul style="margin: 0;">
+            <li>🔥 <b>Dynamic Computation Graphs</b>: Build and modify neural networks on the fly, making experimentation easy</li>
+            <li>🐍 <b>Pythonic and Intuitive</b>: Designed to feel natural for Python developers, with clear and readable code</li>
+            <li>🚀 <b>From Research to Production</b>: Widely adopted in academia and industry, with tools for deployment and scaling</li>
+            <li>🧩 <b>Rich Ecosystem</b>: Extensive libraries for computer vision, NLP, audio, and more (e.g., TorchVision, TorchText)</li>
+            <li>🔎 <b>Debugging Made Easy</b>: Leverage Python debugging tools and interactive development with Jupyter notebooks</li>
+        </ul>
+    </div>
+</div>
 
 PyTorch's approach to machine learning feels natural to Python developers, making it an excellent choice for both beginners and experts.
 
