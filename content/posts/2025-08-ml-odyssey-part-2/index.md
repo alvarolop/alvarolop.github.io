@@ -1,6 +1,6 @@
 ---
 title: "ML Odyssey: Part 2 - Data Manipulation & Visualization with Python"
-date: 2025-08-14
+date: 2025-08-18
 draft: false
 params:
   author: Álvaro López
