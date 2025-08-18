@@ -330,22 +330,22 @@ Our ML Odyssey will take you through practical, hands-on projects using this com
 <div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #28a745; border-radius: 8px; padding: 15px; position: relative;">
 <div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</div>
-<h4 style="margin-top: 30px; color: #495057;">Part 2: EDA Theory</h4>
-<p style="margin-bottom: 0; font-size: 0.9em;">Understanding datasets, features, labels, and data quality fundamentals</p>
+<h4 style="margin-top: 30px; color: #495057;">Part 2: Data Processing & Visualization</h4>
+<p style="margin-bottom: 0; font-size: 0.9em;">Master pandas, matplotlib, and seaborn for data manipulation and visualization</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #e3f2fd; border: 3px solid #28a745; border-radius: 8px; padding: 15px; position: relative;">
-<div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
+<div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</div>
-<h4 style="margin-top: 30px; color: #856404;">Part 3: EDA - Pokemon Dataset</h4>
-<p style="margin-bottom: 0; font-size: 0.9em; color: #856404;"><strong>Hands-on Practice!</strong> Apply EDA techniques to real data</p>
+<h4 style="margin-top: 30px; color: #856404;">Part 3: Statistical Methods for EDA</h4>
+<p style="margin-bottom: 0; font-size: 0.9em; color: #856404;">Understanding statistical concepts and analytical techniques for data exploration</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #e8f5e8; border: 3px solid #28a745; border-radius: 8px; padding: 15px; position: relative;">
-<div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
+<div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #28a745; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✓</div>
-<h4 style="margin-top: 30px; color: #28a745;">Part 4: Traditional ML Fundamentals</h4>
-<p style="margin-bottom: 0; font-size: 0.9em; color: #155724;"><strong>Core Algorithms!</strong> Classification, regression, clustering theory</p>
+<h4 style="margin-top: 30px; color: #28a745;">Part 4: EDA - Pokemon Dataset</h4>
+<p style="margin-bottom: 0; font-size: 0.9em; color: #155724;"><strong>Hands-on Practice!</strong> Apply EDA techniques to real Pokemon data</p>
 </div>
 
 </div>
@@ -353,87 +353,94 @@ Our ML Odyssey will take you through practical, hands-on projects using this com
 <!-- Work in Progress Posts -->
 <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
 
+<div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
+<div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
+<div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
+<h4 style="margin-top: 30px; color: #495057;">Part 5: Traditional ML Fundamentals</h4>
+<p style="margin-bottom: 0; font-size: 0.9em;">Core algorithms: classification, regression, clustering theory</p>
+</div>
+
 <div style="flex: 1; min-width: 280px; background-color: #e3f2fd; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #856404;">Part 5: Traditional ML - Pokemon</h4>
+<h4 style="margin-top: 30px; color: #856404;">Part 6: Traditional ML - Pokemon</h4>
 <p style="margin-bottom: 0; font-size: 0.9em; color: #856404;"><strong>Apply Algorithms!</strong> Implement scikit-learn models</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #495057;">Part 6: Neural Networks Fundamentals</h4>
+<h4 style="margin-top: 30px; color: #495057;">Part 7: Neural Networks Fundamentals</h4>
 <p style="margin-bottom: 0; font-size: 0.9em;">Deep learning concepts and framework comparisons</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #495057;">Part 7: PyTorch Theory</h4>
+<h4 style="margin-top: 30px; color: #495057;">Part 8: PyTorch Theory</h4>
 <p style="margin-bottom: 0; font-size: 0.9em;">Tensors, automatic differentiation, and model optimization</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #fff3cd; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #856404;">Part 8: PyTorch Practice</h4>
+<h4 style="margin-top: 30px; color: #856404;">Part 9: PyTorch Practice</h4>
 <p style="margin-bottom: 0; font-size: 0.9em; color: #856404;"><strong>Build Neural Networks!</strong> Hands-on deep learning implementation</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #fff3cd; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #856404;">Part 9: Berlin Housing Problem</h4>
+<h4 style="margin-top: 30px; color: #856404;">Part 10: Berlin Housing Problem</h4>
 <p style="margin-bottom: 0; font-size: 0.9em; color: #856404;"><strong>Real-World Project!</strong> Regression with traditional ML and neural networks</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #fff3cd; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #856404;">Part 10: Bone Fractures Image Dataset</h4>
+<h4 style="margin-top: 30px; color: #856404;">Part 11: Bone Fractures Image Dataset</h4>
 <p style="margin-bottom: 0; font-size: 0.9em; color: #856404;"><strong>Computer Vision!</strong> Image classification with deep learning</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #fff3cd; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #856404;">Part 11: NLP with Scikit-learn</h4>
+<h4 style="margin-top: 30px; color: #856404;">Part 12: NLP with Scikit-learn</h4>
 <p style="margin-bottom: 0; font-size: 0.9em; color: #856404;"><strong>Text Analysis!</strong> Natural language processing fundamentals</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #495057;">Part 12: Web Scraping with Python</h4>
+<h4 style="margin-top: 30px; color: #495057;">Part 13: Web Scraping with Python</h4>
 <p style="margin-bottom: 0; font-size: 0.9em;">Data collection techniques and ethical scraping practices</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #495057;">Part 13: Kubeflow Pipelines Intro</h4>
+<h4 style="margin-top: 30px; color: #495057;">Part 14: Kubeflow Pipelines Intro</h4>
 <p style="margin-bottom: 0; font-size: 0.9em;">ML pipeline orchestration and MLOps fundamentals</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #495057;">Part 14: Jupyter to Kubeflow</h4>
+<h4 style="margin-top: 30px; color: #495057;">Part 15: Jupyter to Kubeflow</h4>
 <p style="margin-bottom: 0; font-size: 0.9em;">Converting notebooks to production-ready ML pipelines</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #fff3cd; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #ff9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">🛠️</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #856404;">Part 15: Kubeflow Pipelines Exercise</h4>
+<h4 style="margin-top: 30px; color: #856404;">Part 16: Kubeflow Pipelines Exercise</h4>
 <p style="margin-bottom: 0; font-size: 0.9em; color: #856404;"><strong>Production ML!</strong> Deploy and orchestrate ML workflows</p>
 </div>
 
 <div style="flex: 1; min-width: 280px; background-color: #f8f9fa; border: 3px solid #6c757d; border-radius: 8px; padding: 15px; position: relative; opacity: 0.8;">
 <div style="position: absolute; top: 8px; right: 8px; background: #6c757d; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📚</div>
 <div style="position: absolute; top: 8px; left: 8px; background: #6c757d; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">⚠</div>
-<h4 style="margin-top: 30px; color: #495057;">Part 16: ML Project Management</h4>
+<h4 style="margin-top: 30px; color: #495057;">Part 17: ML Project Management</h4>
 <p style="margin-bottom: 0; font-size: 0.9em;">Version control, experiment tracking, and model versioning</p>
 </div>
 
