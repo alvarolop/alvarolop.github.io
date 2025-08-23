@@ -1,15 +1,14 @@
 {{- $title := .Get "title" | default "Code Output" -}}
-{{- $content := .Inner | chomp | strings.TrimPrefix "\n" | strings.TrimSuffix "\n" -}}
-{{- $hasImages := findRE `!\[.*?\]\(.*?\)` $content -}}
+{{- $hasImages := findRE `!\[.*?\]\(.*?\)` .Inner -}}
 
 <div class="code-container">
     <button class="code-output-toggle" onclick="toggleOutput(this)">👉 Show Output</button>
     <div class="code-output">
         <div class="output-content">
             {{- if $hasImages -}}
-                {{ $content | markdownify | safeHTML }}
+                {{ .Inner | markdownify | safeHTML }}
             {{- else -}}
-                {{ $content | safeHTML }}
+                {{ .Inner | safeHTML }}
             {{- end -}}
         </div>
     </div>
