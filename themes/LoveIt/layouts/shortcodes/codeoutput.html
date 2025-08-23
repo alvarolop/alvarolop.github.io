@@ -1,18 +1,11 @@
 {{- $title := .Get "title" | default "Code Output" -}}
-{{- $type := .Get "type" | default "text" -}}
 {{- $content := .Inner | chomp | strings.TrimPrefix "\n" | strings.TrimSuffix "\n" -}}
 
 <div class="code-container">
     <button class="code-output-toggle" onclick="toggleOutput(this)">👉 Show Output</button>
     <div class="code-output">
-        {{- if eq $type "image" -}}
-            <div class="output-diagram">
-                <img src="{{ $content }}" alt="{{ $title }}" />
-            </div>
-        {{- else -}}
-            <div class="output-content">
-                {{ $content | safeHTML }}
-            </div>
-        {{- end -}}
+        <div class="output-content">
+            {{ $content | markdownify | safeHTML }}
+        </div>
     </div>
 </div>
