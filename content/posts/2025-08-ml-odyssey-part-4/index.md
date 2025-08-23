@@ -186,6 +186,12 @@ print(f'Size of the labeled dataset (To Train): {pokemon_df.shape}')
 print(f'Size of the non-labeled dataset (To predict): {predict_df.shape}')
 ```
 
+
+{{< codeoutput title="Command Output" >}}
+Size of the labeled dataset (To Train): (4000, 18)
+Size of the non-labeled dataset (To predict): (1000, 18)
+{{< /codeoutput >}}
+
 ## 📊 **Step 3: Initial Evidence Analysis**
 
 *Now that we have our evidence organized, it's time to conduct our first forensic analysis. We'll examine the classified evidence to understand the patterns and characteristics that distinguish Team Rocket operatives from innocent trainers.*
@@ -210,6 +216,73 @@ print(pokemon_df.describe().T.to_string())
 print(f"\n{'='*50}\n{'FIRST 5 POKEMON RECORDS':^50}\n{'='*50}")
 print(pokemon_df.head().to_string()) # Use .to_string() for better console formatting
 ```
+
+{{< codeoutput title="Command Output" >}}
+==================================================
+                 DATASET OVERVIEW                 
+==================================================
+Total Number of Pokemon: 4000
+
+Features (Columns) Available: ID, Age, City, Economic Status, Profession, Most Used Pokemon Type, Average Pokemon Level, Criminal Record, PokéBall Usage, Win Ratio, Number of Gym Badges, Is Pokemon Champion, Battle Strategy, Number of Migrations, Rare Item Holder, Debt to Kanto, Charity Participation, Team Rocket
+
+
+==================================================
+          DATA TYPES AND NON-NULL COUNTS          
+==================================================
+<class 'pandas.core.frame.DataFrame'>
+Index: 4000 entries, 0 to 3999
+Data columns (total 18 columns):
+ #   Column                  Non-Null Count  Dtype 
+---  ------                  --------------  ----- 
+ 0   ID                      4000 non-null   int64 
+ 1   Age                     4000 non-null   int64 
+ 2   City                    4000 non-null   object
+ 3   Economic Status         4000 non-null   object
+ 4   Profession              4000 non-null   object
+ 5   Most Used Pokemon Type  4000 non-null   object
+ 6   Average Pokemon Level   4000 non-null   int64 
+ 7   Criminal Record         4000 non-null   int64 
+ 8   PokéBall Usage          4000 non-null   object
+ 9   Win Ratio               4000 non-null   int64 
+ 10  Number of Gym Badges    4000 non-null   int64 
+ 11  Is Pokemon Champion     4000 non-null   bool  
+ 12  Battle Strategy         4000 non-null   object
+ 13  Number of Migrations    4000 non-null   int64 
+ 14  Rare Item Holder        4000 non-null   bool  
+ 15  Debt to Kanto           4000 non-null   int64 
+ 16  Charity Participation   4000 non-null   bool  
+ 17  Team Rocket             4000 non-null   object
+dtypes: bool(3), int64(8), object(7)
+memory usage: 511.7+ KB
+
+==================================================
+            BASIC STATISTICAL SUMMARY             
+==================================================
+                        count         mean           std   min       25%      50%       75%       max
+ID                     4000.0   1999.50000   1154.844867   0.0    999.75   1999.5   2999.25    3999.0
+Age                    4000.0     40.36150     17.511781  10.0     25.00     41.0     55.00      70.0
+Average Pokemon Level  4000.0     52.08400     27.527057   5.0     28.00     52.0     76.00     100.0
+Criminal Record        4000.0      0.09000      0.286218   0.0      0.00      0.0      0.00       1.0
+Win Ratio              4000.0     53.30275     19.024407  20.0     37.00     53.0     70.00      90.0
+Number of Gym Badges   4000.0      2.23150      1.988441   0.0      1.00      2.0      4.00       8.0
+Number of Migrations   4000.0     13.24000      7.818867   0.0      6.00     13.0     20.00      30.0
+Debt to Kanto          4000.0  78168.56225  79362.972594  37.0  30233.50  59916.5  88226.25  398601.0
+
+==================================================
+             FIRST 5 POKEMON RECORDS              
+==================================================
+   ID  Age           City Economic Status            Profession Most Used Pokemon Type  Average Pokemon Level  Criminal Record PokéBall Usage  Win Ratio  Number of Gym Badges  Is Pokemon Champion Battle Strategy  Number of Migrations  Rare Item Holder  Debt to Kanto  Charity Participation Team Rocket
+0   0   27    Pewter City          Middle             Fisherman                   Rock                     50                0       DuskBall         51                     1                False   Unpredictable                    25             False          24511                   True          No
+1   1   55  Viridian City          Middle       PokéMart Seller                  Grass                     35                1       HealBall         53                     2                False   Unpredictable                    19             False         177516                   True         Yes
+2   2   14    Pallet Town            High        Police Officer                 Poison                     96                0        NetBall         76                     5                False      Aggressive                    18             False          85695                   True          No
+3   3   41  Cerulean City          Middle  Gym Leader Assistant                 Dragon                     23                0      UltraBall         27                     0                False       Defensive                    10             False          39739                   True          No
+4   4   15    Pallet Town          Middle  Gym Leader Assistant                 Ground                     16                1       HealBall         51                     1                False      Aggressive                    17              True         126923                  False         Yes
+{{< /codeoutput >}}
+
+
+
+
+
 
 <!-- # --- Type distribution ---
 print(f"\n{'='*50}\n{'POKEMON TYPE DISTRIBUTION':^50}\n{'='*50}")
@@ -251,6 +324,22 @@ plt.ylabel('Count')
 plt.xlabel('Does it belong to Team Rocket?')
 plt.show()
 ```
+
+{{< codeoutput title="Pokemon Analysis Results" >}}
+Distribution of the 'Team Rocket' objective variable (proportion):
+Team Rocket
+No     0.82
+Yes    0.18
+Name: proportion, dtype: float64
+
+Count of each class in the 'Team Rocket' objective variable:
+Team Rocket
+No     3280
+Yes     720
+Name: count, dtype: int64
+
+![Plot](pokemon_files/03-04-pokemon_3_1.png)
+{{< /codeoutput >}}
 
 ## 🔐 **Step 5: Decoding the Evidence**
 
@@ -299,6 +388,48 @@ for col in categorical_vars:
         print(f"  ... and {len(unique_values) - 5} more categories")
 ```
 
+
+{{< codeoutput title="Pokemon Analysis Results" >}}
+==================================================
+  Number of categories per categorical variable   
+==================================================
+City: 10 categories
+Economic Status: 3 categories
+Profession: 16 categories
+Most Used Pokemon Type: 18 categories
+PokéBall Usage: 10 categories
+Battle Strategy: 3 categories
+Team Rocket: 2 categories
+==================================================
+   Sample values for each categorical variable    
+==================================================
+
+City:
+  Sample values: ['Pewter City', 'Viridian City', 'Pallet Town', 'Cerulean City', 'Lavender Town']
+  ... and 5 more categories
+
+Economic Status:
+  Sample values: ['Middle', 'High', 'Low']
+
+Profession:
+  Sample values: ['Fisherman', 'PokéMart Seller', 'Police Officer', 'Gym Leader Assistant', 'Daycare Worker']
+  ... and 11 more categories
+
+Most Used Pokemon Type:
+  Sample values: ['Rock', 'Grass', 'Poison', 'Dragon', 'Ground']
+  ... and 13 more categories
+
+PokéBall Usage:
+  Sample values: ['DuskBall', 'HealBall', 'NetBall', 'UltraBall', 'TimerBall']
+  ... and 5 more categories
+
+Battle Strategy:
+  Sample values: ['Unpredictable', 'Aggressive', 'Defensive']
+
+Team Rocket:
+  Sample values: ['No', 'Yes']
+{{< /codeoutput >}}
+
 Now, we can apply the `LabelEncoder` class from scikit-learn to our categorical variables.
 
 ```python {open=true, lineNos=true}
@@ -332,6 +463,73 @@ for col, le in label_encoders.items():
 print(f"\n👀 First 3 rows of encoded dataset:")
 print(pokemon_df.head(3))
 ```
+
+{{< codeoutput title="Pokemon Analysis Results" >}}
+==================================================
+Applying Label Encoding to categorical variables...
+==================================================
+
+✅ Encoded 'City':
+   Pokemon Dataset: [np.int64(6), np.int64(9), np.int64(5)]
+   Predict Dataset:  [np.int64(5), np.int64(1), np.int64(9)]
+
+✅ Encoded 'Economic Status':
+   Pokemon Dataset: [np.int64(2), np.int64(0), np.int64(1)]
+   Predict Dataset:  [np.int64(1), np.int64(2), np.int64(0)]
+
+✅ Encoded 'Profession':
+   Pokemon Dataset: [np.int64(7), np.int64(10), np.int64(11)]
+   Predict Dataset:  [np.int64(14), np.int64(12), np.int64(15)]
+
+✅ Encoded 'Most Used Pokemon Type':
+   Pokemon Dataset: [np.int64(15), np.int64(9), np.int64(13)]
+   Predict Dataset:  [np.int64(5), np.int64(3), np.int64(6)]
+
+✅ Encoded 'PokéBall Usage':
+   Pokemon Dataset: [np.int64(1), np.int64(3), np.int64(6)]
+   Predict Dataset:  [np.int64(9), np.int64(8), np.int64(1)]
+
+✅ Encoded 'Battle Strategy':
+   Pokemon Dataset: [np.int64(2), np.int64(0), np.int64(1)]
+   Predict Dataset:  [np.int64(0), np.int64(2), np.int64(1)]
+
+📊 Encoding complete! Dataset shape: (4000, 18)
+📋 All variables are now numerical and ready for ML algorithms!
+
+🔑 Label Encoders mapping per column:
+  City: {'Celadon City': np.int64(0), 'Cerulean City': np.int64(1), 'Cinnabar Island': np.int64(2), 'Fuchsia City': np.int64(3), 'Lavender Town': np.int64(4), 'Pallet Town': np.int64(5), 'Pewter City': np.int64(6), 'Saffron City': np.int64(7), 'Vermilion City': np.int64(8), 'Viridian City': np.int64(9)}
+  Economic Status: {'High': np.int64(0), 'Low': np.int64(1), 'Middle': np.int64(2)}
+  Profession: {'Biker': np.int64(0), 'Black Market Dealer': np.int64(1), 'Breeder': np.int64(2), 'Casino Worker': np.int64(3), 'Champion': np.int64(4), 'Daycare Worker': np.int64(5), 'Elite Trainer': np.int64(6), 'Fisherman': np.int64(7), 'Gym Leader Assistant': np.int64(8), 'Nurse': np.int64(9), 'PokéMart Seller': np.int64(10), 'Police Officer': np.int64(11), 'Researcher': np.int64(12), 'Rocket Grunt': np.int64(13), 'Scientist': np.int64(14), 'Underground Battler': np.int64(15)}
+  Most Used Pokemon Type: {'Bug': np.int64(0), 'Dark': np.int64(1), 'Dragon': np.int64(2), 'Electric': np.int64(3), 'Fairy': np.int64(4), 'Fighting': np.int64(5), 'Fire': np.int64(6), 'Flying': np.int64(7), 'Ghost': np.int64(8), 'Grass': np.int64(9), 'Ground': np.int64(10), 'Ice': np.int64(11), 'Normal': np.int64(12), 'Poison': np.int64(13), 'Psychic': np.int64(14), 'Rock': np.int64(15), 'Steel': np.int64(16), 'Water': np.int64(17)}
+  PokéBall Usage: {'DarkBall': np.int64(0), 'DuskBall': np.int64(1), 'GreatBall': np.int64(2), 'HealBall': np.int64(3), 'LuxuryBall': np.int64(4), 'MasterBall': np.int64(5), 'NetBall': np.int64(6), 'PokéBall': np.int64(7), 'TimerBall': np.int64(8), 'UltraBall': np.int64(9)}
+  Battle Strategy: {'Aggressive': np.int64(0), 'Defensive': np.int64(1), 'Unpredictable': np.int64(2)}
+
+👀 First 3 rows of encoded dataset:
+   ID  Age  City  Economic Status  Profession  Most Used Pokemon Type  \
+0   0   27     6                2           7                      15   
+1   1   55     9                2          10                       9   
+2   2   14     5                0          11                      13   
+
+   Average Pokemon Level  Criminal Record  PokéBall Usage  Win Ratio  \
+0                     50                0               1         51   
+1                     35                1               3         53   
+2                     96                0               6         76   
+
+   Number of Gym Badges  Is Pokemon Champion  Battle Strategy  \
+0                     1                False                2   
+1                     2                False                2   
+2                     5                False                0   
+
+   Number of Migrations  Rare Item Holder  Debt to Kanto  \
+0                    25             False          24511   
+1                    19             False         177516   
+2                    18             False          85695   
+
+   Charity Participation Team Rocket  
+0                   True          No  
+1                   True         Yes  
+2                   True          No  
+{{< /codeoutput >}}
 
 {{< admonition type=tip title="Best Practice: Preserve Your Original Data" open=true >}}
 For simplicity, in this tutorial we encode categorical variables directly in the original DataFrame variables (`pokemon_df`, `predict_df`).  
@@ -420,6 +618,17 @@ if p < 0.05:
 else:
   print("Result: 🧐 No significant association found.")
 ```
+
+{{< codeoutput title="Pokemon Analysis Results" >}}
+
+![Pikachu Introduction](pokemon_files/03-04-pokemon_6_0.png)
+Chi-square statistic: 20.56
+p-value: 0.2467
+Result: No significant association found.
+{{< /codeoutput >}}
+
+
+
 ## Q2.  Is economic status a reliable predictor of criminal affiliation?
 
 * 📊 Graph: Box plot of debt and economic status per Team Rocket status.
@@ -465,6 +674,14 @@ else:
   print("Result: 🧐 No significant debt differences found.")
 ```
 
+
+{{< codeoutput title="Pokemon Analysis Results" >}}
+![Pikachu Introduction](pokemon_files/03-04-pokemon_7_0.png)
+Debt to Kanto ANOVA F-statistic: 4825.47
+Debt to Kanto ANOVA p-value: 0.0000
+Result: Significant debt differences found between Team Rocket and non-Team Rocket members.
+{{< /codeoutput >}}
+
 **Part B: Economic Status Analysis**
 * 📊 Graph: Count plot of economic status per Team Rocket status.
 * 💰 Test: ANOVA test for group differences.
@@ -508,6 +725,13 @@ else:
   print("Result: 🧐 No significant economic status differences found.")
 ```
 
+{{< codeoutput title="Pokemon Analysis Results" >}}
+![Pikachu Introduction](pokemon_files/03-04-pokemon_8_0.png)
+Economic Status ANOVA F-statistic: 0.36
+Economic Status ANOVA p-value: 0.5502
+Result: No significant economic status differences found.
+{{< /codeoutput >}}
+
 ## Q3. Do Team Rocket members have a preference for specific PokéBalls?
 
 * 🎨 Graph: Heatmap of PokéBall usage vs. Team Rocket status.
@@ -544,61 +768,42 @@ else:
     print("Result: 🧐 No significant association found.")
 ```
 
+{{< codeoutput title="Pokemon Analysis Results" >}}
+![Pikachu Introduction](pokemon_files/03-04-pokemon_9_0.png)
+Chi-square statistic: 23.22
+p-value: 0.0057
+Result: 🏆 Significant association between PokéBall usage and Team Rocket membership.
+{{< /codeoutput >}}
+
 ## Q4. Does a high battle win ratio correlate with Team Rocket membership?
 
 * 📉 Graph: KDE plot of win ratio distribution for both groups.
 * 🏆 Test: T-test for mean differences.
 
+**Part A: Data Preparation and Visualization**
+
+We'll analyze the win ratio distributions for both Team Rocket and non-Team Rocket members using a KDE plot to visualize the differences:
+
 ```python {open=true, lineNos=true}
 from scipy.stats import ttest_ind
 
-# --- Data Preparation for Analysis ---
-# Assuming 'pokemon_df' is already defined.
-# We first separate the 'Win Ratio' data into two groups.
+# Separate win ratio data by Team Rocket membership
 win_ratio_rocket = pokemon_df[pokemon_df['Team Rocket'] == 'Yes']['Win Ratio'].dropna()
 win_ratio_nonrocket = pokemon_df[pokemon_df['Team Rocket'] == 'No']['Win Ratio'].dropna()
 
-# --- Descriptive Statistics ---
-# Calculate the mean Win Ratio for each group to use in the plot.
+# Calculate means for comparison
 mean_rocket = win_ratio_rocket.mean()
 mean_nonrocket = win_ratio_nonrocket.mean()
+print(f"Mean Win Ratio - Team Rocket: {mean_rocket:.2f}, Non-Rocket: {mean_nonrocket:.2f}\n")
 
-print(f"Mean Win Ratio for Team Rocket members: {mean_rocket:.2f}")
-print(f"Mean Win Ratio for non-Team Rocket members: {mean_nonrocket:.2f}\n")
-
-# --- Visualizing the Distribution with a KDE Plot ---
-# Set a consistent figure size for better visuals in the blog.
+# Create KDE plot with mean indicators
 plt.figure(figsize=(10, 6))
-
-# To ensure the colors match, we first define the palette with a specific number of colors.
-# The categories are likely ordered alphabetically: 'No', then 'Yes'.
 colors = sns.color_palette('mako', n_colors=2)
+sns.kdeplot(data=pokemon_df, x='Win Ratio', hue='Team Rocket', fill=True, common_norm=False, palette=colors)
 
-# Create the KDE plot to visualize the distribution of Win Ratios.
-sns.kdeplot(
-    data=pokemon_df,
-    x='Win Ratio',
-    hue='Team Rocket',
-    fill=True,
-    common_norm=False,
-    palette=colors # Use the predefined colors
-)
-
-# Add vertical lines to clearly show where the means are located.
-# We now reference the colors directly from our predefined 'colors' list.
-# Assuming 'No' gets the first color and 'Yes' gets the second.
-plt.axvline(
-    x=mean_rocket,
-    color=colors[1],
-    linestyle='--',
-    label=f"Rocket Mean: {mean_rocket:.2f}"
-)
-plt.axvline(
-    x=mean_nonrocket,
-    color=colors[0],
-    linestyle='--',
-    label=f"Non-Rocket Mean: {mean_nonrocket:.2f}"
-)
+# Add mean lines
+plt.axvline(x=mean_rocket, color=colors[1], linestyle='--', label=f"Rocket Mean: {mean_rocket:.2f}")
+plt.axvline(x=mean_nonrocket, color=colors[0], linestyle='--', label=f"Non-Rocket Mean: {mean_nonrocket:.2f}")
 
 plt.title('Win Ratio Distribution by Team Rocket Membership')
 plt.xlabel('Win Ratio')
@@ -606,7 +811,19 @@ plt.ylabel('Density')
 plt.legend()
 plt.tight_layout()
 plt.show()
+```
 
+{{< codeoutput title="Pokemon Analysis Results" >}}
+Mean Win Ratio - Team Rocket: 58.87, Non-Rocket: 52.08
+![Pikachu Introduction](pokemon_files/03-04-pokemon_10_1.png)
+
+{{< /codeoutput >}}
+
+**Part B: Statistical Testing**
+
+Now let's perform the statistical analysis to determine if there's a significant difference between the groups:
+
+```python {open=true, lineNos=true}
 # --- T-test for Mean Difference ---
 # Perform an independent t-test. The 'equal_var=False' parameter
 # performs a Welch's t-test, which is generally more robust.
@@ -625,6 +842,15 @@ else:
     print("Result: 🧐 No significant difference in mean Win Ratio between groups.")
 ```
 
+The second part performs a Welch's t-test (which doesn't assume equal variances) to statistically determine if the observed difference in mean win ratios is significant or just due to random chance.
+
+
+{{< codeoutput title="Pokemon Analysis Results" >}}
+T-test statistic: 9.24
+p-value: 0.0000
+Result: 🏆 Significant difference in mean Win Ratio between Team Rocket and non-Team Rocket members.
+{{< /codeoutput >}}
+
 
 
 
@@ -642,22 +868,9 @@ else:
 
 ## What's Next?
 
-In our next post, we'll:
-1. Apply these pandas basics to a real-world dataset
-2. Learn advanced data cleaning techniques
-3. Create insightful visualizations
-4. Prepare data for machine learning
-
-<div style="background-color: #f6f8fa; border-left: 4px solid #26e3ddff; padding: 1em; margin-bottom: 1em;">
-
-📝 **Practice Exercise**: Try these tasks to reinforce your learning:
-1. Create a DataFrame with your own data
-2. Practice different selection methods
-3. Try grouping and aggregating data
-4. Experiment with basic plotting
+In this post, we've tackled the first four questions of our investigation using parametric statistical analysis. In the upcoming posts, we'll continue our deep dive by exploring non-parametric features and more advanced analytical techniques to further unravel the mysteries of Team Rocket membership. Stay tuned!
 
 All code examples are available in our [ML Odyssey repository](https://github.com/alvarolop/ml-odyssey).
 
-</div>
 
 
