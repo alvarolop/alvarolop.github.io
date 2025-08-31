@@ -9,6 +9,17 @@ Also, check these links if you are planning on creating a blog for yourself:
 * https://github.com/sivaprasadreddy/hugo-asciidoc-blog/tree/main
 * https://www.sivalabs.in/creating-blog-using-hugo-asciidoc-netlify/
 
+Pokemon useful:
+* https://www.globalsqa.com/machine-learning-algorithm-cheat-sheets/
+* https://www.kaggle.com/code/lgsus29/pokemon-detective-operation-rocketreveal/notebook
+
+Generate Markdown from Jupyter Notebooks:
+
+```bash
+jupyter nbconvert --to markdown --output-dir . 03-04-pokemon.ipynb
+```
+
+
 
 
 
